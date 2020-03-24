@@ -1,0 +1,111 @@
+:root {
+    --grid-gap: 15px;
+    --one-cell-width: min(calc(100vw / 4), 400px);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background: #080808;
+}
+
+header h1 {
+    font-size: 60px;
+    color: #ccc;
+    letter-spacing: 0.05em;
+    padding: 40px;
+    text-align: center;
+    font-family: 'Permanent Marker';
+    background-image: linear-gradient(#111, #080808);
+    /* background: #ddd; */
+}
+
+#photo-grid {
+    display: grid;
+    grid-template-columns: calc(var(--one-cell-width)) * 3;
+    grid-auto-rows: calc(var(--one-cell-width) * 0.5 * 3);
+    gap: var(--grid-gap);
+    margin: 20px calc((100vw - var(--one-cell-width) * 3 - var(--grid-gap) * 2) / 2) 50px;
+}
+
+.photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: white;
+    background: green;
+    border-radius: 15px;
+    font-family: "Kalam";
+    font-size: 1.3em;
+    text-shadow: 0 0  20px red;;
+    text-align: center;
+    transition: all 0.5s;
+}
+
+.photo:hover {
+    transform: scale(1.05);
+}
+
+.photo2 {
+    background: url("https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
+    background-size: cover;
+    background-position: center;
+}
+
+.photo1 {
+    background: url("res/my_photo.png");
+    background-size: cover;
+    background-position: 0 -120px;
+}
+
+.photo3 {
+    background: url("https://images.unsplash.com/photo-1566232137428-27dd00f5c6bd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
+    background-size: cover;
+    background-position: center;
+}
+
+.photo5 {
+    background: url("https://images.unsplash.com/photo-1572177812156-58036aae439c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
+    background-size: cover;
+    background-position: center;
+}
+
+.photo4 {
+    background: url("https://images.unsplash.com/photo-1551033406-611cf9a28f67?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
+    background-size: cover;
+    background-position: center;
+}
+
+@media screen and (min-width: 600px) {
+    #photo-grid {
+        grid-template-columns: repeat(3, var(--one-cell-width));
+        grid-auto-rows: max(calc(var(--one-cell-width) * 0.5), calc((100vh - 168px - 70px - var(--grid-gap) * 2)) / 3);
+        gap: var(--grid-gap);
+        margin: 20px calc((100vw - var(--one-cell-width) * 3 - var(--grid-gap) * 2) / 2) 50px;
+    }
+    
+    .photo {
+        font-size: 2em;
+    }
+
+    .photo1 {
+        grid-row: span 2;
+        background-position: center;
+    }
+
+    .photo2 {
+        grid-column: span 2;
+    }
+
+    .photo4 {
+        grid-row: span 2;
+    }
+
+    .photo5 {
+        grid-column: span 2;
+    }
+}
+
